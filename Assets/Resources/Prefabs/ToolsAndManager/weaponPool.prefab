@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1929979342135734927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929979342135734929}
+  - component: {fileID: 1929979342135734928}
+  m_Layer: 0
+  m_Name: weaponPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1929979342135734929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929979342135734927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929979342135734928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929979342135734927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12759d8c7f0fefa42b23bf6ef61b1038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponsPool:
+    _serializedList:
+    - Key: bull
+      Value: {fileID: 5124219473894491285, guid: cf62f6f5dc591a74295437858d159c6b, type: 3}
+    - Key: glock
+      Value: {fileID: 3382456482192534934, guid: 477dd5ad4b4f0644283181581b7ccca2, type: 3}
+    - Key: gold
+      Value: {fileID: 8860011593284611335, guid: 43139f28a707ad047b62f62ff8bde16e, type: 3}
+    - Key: m1911
+      Value: {fileID: 3300253520898216211, guid: f79f71d923852f141800918b4de6578f, type: 3}
+    - Key: ak47
+      Value: {fileID: 841312229876330369, guid: 103d9d8224e124e4ead8bc77d226e744, type: 3}
+    - Key: bizon
+      Value: {fileID: 4923224904036938511, guid: 8f03c43b19b3d334fab29a7bb32aaa5b, type: 3}
+    - Key: m12
+      Value: {fileID: 8613130699705206435, guid: ba982f7b05f969a459c858d20b3bf2a6, type: 3}
+    - Key: p90
+      Value: {fileID: 6689786244272974973, guid: 4092102371511674fa1257662c34a3c8, type: 3}
+    - Key: ithaca
+      Value: {fileID: 1833475693534743436, guid: f8a86eadcf88c814d981bd0f9019e16c, type: 3}
+    - Key: ksg
+      Value: {fileID: 6905637285854789920, guid: 964719c8fdda56f4c9194c8a3eb0596d, type: 3}
+    - Key: leaver
+      Value: {fileID: 5926606744413486035, guid: ab9509d6ad7d9e24bb1f5b922c12689e, type: 3}
+    - Key: sawnOff
+      Value: {fileID: 3958649797996530499, guid: afccd374bf4bb0b448101e6500a3cf88, type: 3}
+    - Key: 501
+      Value: {fileID: 6252960250862792749, guid: 90dd7b5bcd38d0b439e544763c4cf3c7, type: 3}
+    - Key: awn
+      Value: {fileID: 7919015712701634236, guid: 5f6deac4b256fd94d80a2484b44e65a3, type: 3}
+    - Key: hk
+      Value: {fileID: 7056919214091125760, guid: bf4768ef7e4f9654891331348be6c0a1, type: 3}
+    - Key: m95
+      Value: {fileID: 7809744371805502373, guid: db3e2b99ce9d8774895085ad078b1880, type: 3}
