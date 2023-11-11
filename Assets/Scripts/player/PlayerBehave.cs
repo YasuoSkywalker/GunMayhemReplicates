@@ -18,11 +18,13 @@ public class PlayerBehave : MonoBehaviour
     private float throwForce = 0f;  //投掷炸药的力度
     private Vector2 maxForce = new Vector2(250f, 150f);
     private Vector2 minForce = new Vector2(150f, 150f);
+    private WeaponFactory weaponFactory;
 
     private float diedPositionY = -8f; //角色Y轴低于此值时判定为死亡
 
     void Start()
     {
+        weaponFactory = Resources.Load<WeaponFactory>("WeaponFactory");
         playerMovement = GetComponent<PlayerMovement>();
         playerInfo = GetComponent<PlayerInfo>();
         firstWeapon = playerInfo.getFirstWeapon();
@@ -97,7 +99,7 @@ public class PlayerBehave : MonoBehaviour
         if (transform.Find("weapon") != null)
             Destroy(transform.Find("weapon").gameObject);
 
-        GameObject temp = Instantiate(WeaponPool.getInstance().getWeapon(name),this.transform);
+        GameObject temp = Instantiate(weaponFactory.GetWeapon(name), this.transform);
         temp.transform.position = weaponPoint.position;
         temp.name = "weapon";
 
@@ -115,7 +117,7 @@ public class PlayerBehave : MonoBehaviour
         if (transform.Find("weapon") != null)
             Destroy(transform.Find("weapon").gameObject);
 
-        GameObject temp = Instantiate(WeaponPool.getInstance().getWeapon(firstWeapon), this.transform);
+        GameObject temp = Instantiate(weaponFactory.GetWeapon(firstWeapon), this.transform);
         temp.transform.position = weaponPoint.position;
         temp.name = "weapon";
 

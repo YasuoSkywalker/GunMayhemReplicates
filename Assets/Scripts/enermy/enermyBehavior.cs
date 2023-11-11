@@ -11,6 +11,7 @@ public class enermyBehavior : MonoBehaviour
     private string firstWeapon;  //初始武器
     private bool isDied = false;  //角色是否死亡
     private float diedPositionY = -8f; //角色Y轴低于此值时判定为死亡
+    private WeaponFactory weaponFactory;
     [SerializeField]
     [Header("敌人重生点")]
     private Vector3 enermyRegeneratePoint;
@@ -20,6 +21,7 @@ public class enermyBehavior : MonoBehaviour
 
     private void Start()
     {
+        weaponFactory = Resources.Load<WeaponFactory>("WeaponFactory");
         enermyMov = GetComponent<enermyMovement>();
         playerInfo = GetComponent<PlayerInfo>();
         firstWeapon = playerInfo.getFirstWeapon();
@@ -56,7 +58,7 @@ public class enermyBehavior : MonoBehaviour
         if (transform.Find("weapon") != null)
             Destroy(transform.Find("weapon").gameObject);
 
-        GameObject temp = Instantiate(WeaponPool.getInstance().getWeapon(firstWeapon), this.transform);
+        GameObject temp = Instantiate(weaponFactory.GetWeapon(firstWeapon), this.transform);
         temp.transform.position = weaponPoint.position;
         temp.name = "weapon";
 

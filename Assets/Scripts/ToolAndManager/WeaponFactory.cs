@@ -2,50 +2,92 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="WeaponFactory", menuName ="Factory/WeaponFactory")]
+[CreateAssetMenu(fileName = "WeaponFactory", menuName = "Factory/WeaponFactory")]
 public class WeaponFactory : ScriptableObject
 {
     #region pistol
     [SerializeField]
-    private weapon bull;
+    private GameObject bull;
     [SerializeField]
-    private weapon glock;
+    private GameObject glock;
     [SerializeField]
-    private weapon gold;
+    private GameObject gold;
     [SerializeField]
-    private weapon m1911;
+    private GameObject m1911;
     #endregion
 
     #region rifle
     [SerializeField]
-    private weapon ak47;
+    private GameObject ak47;
     [SerializeField]
-    private weapon bizon;
+    private GameObject bizon;
     [SerializeField]
-    private weapon m12;
+    private GameObject m12;
     [SerializeField]
-    private weapon p90;
+    private GameObject p90;
     #endregion
 
     #region shotGun
     [SerializeField]
-    private weapon ithaca;
+    private GameObject ithaca;
     [SerializeField]
-    private weapon ksg;
+    private GameObject ksg;
     [SerializeField]
-    private weapon leaver;
+    private GameObject leaver;
     [SerializeField]
-    private weapon sawnOff;
+    private GameObject sawnOff;
     #endregion
 
     #region sniper
     [SerializeField]
-    private weapon sniper501;
+    private GameObject sniper501;
     [SerializeField]
-    private weapon awn;
+    private GameObject awn;
     [SerializeField]
-    private weapon hk;
+    private GameObject hk;
     [SerializeField]
-    private weapon m95;
+    private GameObject m95;
     #endregion
+
+    public GameObject GetWeapon(string GameObjectName)
+    {
+        switch (GameObjectName)
+        {
+            case "bull":
+                return bull;
+            case "glock":
+                return glock;
+            case "gold":
+                return gold;
+            case "m1911":
+                return m1911;
+            case "ak47":
+                return ak47;
+            case "bizon":
+                return bizon;
+            case "m12":
+                return m12;
+            case "p90":
+                return p90;
+            case "ithaca":
+                return ithaca;
+            case "ksg":
+                return ksg;
+            case "leaver":
+                return leaver;
+            case "sawnOff":
+                return sawnOff;
+            case "501":
+                return sniper501;
+            case "awn":
+                return awn;
+            case "hk":
+                return hk;
+            case "m95":
+                return m95;
+            default:
+                Debug.LogWarning("GameObject:" + GameObjectName + "Not Found");
+                return bull;
+        }
+    }
 }
