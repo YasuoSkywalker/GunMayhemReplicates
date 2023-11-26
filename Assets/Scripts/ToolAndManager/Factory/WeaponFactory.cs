@@ -54,40 +54,40 @@ public class WeaponFactory : ScriptableObject
         switch (GameObjectName)
         {
             case "bull":
-                return bull;
+                return Instantiate(bull);
             case "glock":
-                return glock;
+                return Instantiate(glock);
             case "gold":
-                return gold;
+                return Instantiate(gold);
             case "m1911":
-                return m1911;
+                return Instantiate(m1911);
             case "ak47":
-                return ak47;
+                return Instantiate(ak47);
             case "bizon":
-                return bizon;
+                return Instantiate(bizon);
             case "m12":
-                return m12;
+                return Instantiate(m12);
             case "p90":
-                return p90;
+                return Instantiate(p90);
             case "ithaca":
-                return ithaca;
+                return Instantiate(ithaca);
             case "ksg":
-                return ksg;
+                return Instantiate(ksg);
             case "leaver":
-                return leaver;
+                return Instantiate(leaver);
             case "sawnOff":
-                return sawnOff;
+                return Instantiate(sawnOff);
             case "501":
-                return sniper501;
+                return Instantiate(sniper501);
             case "awn":
-                return awn;
+                return Instantiate(awn);
             case "hk":
-                return hk;
+                return Instantiate(hk);
             case "m95":
-                return m95;
+                return Instantiate(m95);
             default:
                 Debug.LogWarning("GameObject:" + GameObjectName + "Not Found");
-                return bull;
+                return Instantiate(bull);
         }
     }
 }

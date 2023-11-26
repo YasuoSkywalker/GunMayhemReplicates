@@ -21,7 +21,7 @@ public class enermyBehavior : MonoBehaviour
 
     private void Start()
     {
-        weaponFactory = Resources.Load<WeaponFactory>("WeaponFactory");
+        weaponFactory = Resources.Load<WeaponFactory>("Factory/WeaponFactory");
         enermyMov = GetComponent<enermyMovement>();
         playerInfo = GetComponent<PlayerInfo>();
         firstWeapon = playerInfo.getFirstWeapon();
@@ -58,8 +58,10 @@ public class enermyBehavior : MonoBehaviour
         if (transform.Find("weapon") != null)
             Destroy(transform.Find("weapon").gameObject);
 
-        GameObject temp = Instantiate(weaponFactory.GetWeapon(firstWeapon), this.transform);
+        GameObject temp = weaponFactory.GetWeapon(firstWeapon);
+        temp.transform.SetParent(transform);
         temp.transform.position = weaponPoint.position;
+        temp.transform.localScale = Vector3.one;  //修复武器反向的Bug
         temp.name = "weapon";
 
         //设置武器阵营

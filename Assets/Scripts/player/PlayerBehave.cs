@@ -24,7 +24,7 @@ public class PlayerBehave : MonoBehaviour
 
     void Start()
     {
-        weaponFactory = Resources.Load<WeaponFactory>("WeaponFactory");
+        weaponFactory = Resources.Load<WeaponFactory>("Factory/WeaponFactory");
         playerMovement = GetComponent<PlayerMovement>();
         playerInfo = GetComponent<PlayerInfo>();
         firstWeapon = playerInfo.getFirstWeapon();
@@ -99,8 +99,10 @@ public class PlayerBehave : MonoBehaviour
         if (transform.Find("weapon") != null)
             Destroy(transform.Find("weapon").gameObject);
 
-        GameObject temp = Instantiate(weaponFactory.GetWeapon(name), this.transform);
+        GameObject temp = weaponFactory.GetWeapon(name);
+        temp.transform.SetParent(transform);
         temp.transform.position = weaponPoint.position;
+        temp.transform.localScale = Vector3.one;  //修复武器反向的Bug
         temp.name = "weapon";
 
         //设置武器阵营
@@ -114,7 +116,8 @@ public class PlayerBehave : MonoBehaviour
     /// </summary>
     public void setBaseWeapon()
     {
-        if (transform.Find("weapon") != null)
+        setWeapon(firstWeapon);
+        /*if (transform.Find("weapon") != null)
             Destroy(transform.Find("weapon").gameObject);
 
         GameObject temp = Instantiate(weaponFactory.GetWeapon(firstWeapon), this.transform);
@@ -124,7 +127,7 @@ public class PlayerBehave : MonoBehaviour
         //设置武器阵营
         if (transform.Find("weapon") != null)
             transform.Find("weapon").GetComponent<weapon>().setTeam(playerInfo.getTeam());
-        else Debug.Log(gameObject.name + " Weapon not found!");
+        else Debug.Log(gameObject.name + " Weapon not found!");*/
     }
 
     /// <summary>
